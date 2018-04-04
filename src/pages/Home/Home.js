@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-
-export default class Home extends Component {
+import {hot} from 'react-hot-loader';
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,3 +24,4 @@ export default class Home extends Component {
         )
     }
 }
+export default hot(module)(Home);
