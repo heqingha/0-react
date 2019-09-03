@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './Page1.css';
+import './Page1.less';
 
 import image from './images/brickpsert.jpg';
 

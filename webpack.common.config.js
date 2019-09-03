@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+
 commonConfig = {
     entry: {
         app: [
@@ -12,8 +14,8 @@ commonConfig = {
     },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: '[name].[chunkhash].js',
-        chunkFilename: '[name].[chunkhash].js',
+        filename: '[name].[chunkhash:6].js',
+        chunkFilename: '[name].[chunkhash:6].js',
         publicPath: "/"
     },
     module: {
@@ -32,6 +34,7 @@ commonConfig = {
         }]
     },
     plugins: [
+        new CleanWebpackPlugin(["dist/*.*"]),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: path.join(__dirname, 'src/index.html')

@@ -30,8 +30,13 @@ const publicConfig = {
     ]
   },
   plugins: [
+    
     new CleanWebpackPlugin(["dist/*.*"]),
     new UglifyJSPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+  }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
@@ -39,7 +44,7 @@ const publicConfig = {
     }),
     new ExtractTextPlugin({
       filename: "[name].[contenthash:5].css",
-      allChunks: true
+      // allChunks: true
     })
   ]
 };
