@@ -10,10 +10,11 @@ class UseGaojie extends Component {
     };
   }
   componentDidMount() {
-    console.log(222, this.state);
   }
   o = () => {};
+  op = () => {};
   render() {
+    console.log('122', this)
     return <Div>erer</Div>;
   }
 }
